@@ -39,9 +39,12 @@ func attack_player():															#based on enemy stamina levels determines wh
 		
 		attack_in_progress = true
 		attack_just_started = true
+		
 		await attacker.make_attack(attack[1], attack[0])
-		await get_tree().create_timer(attack[1].get_length()*1.0/60).timeout
+		await get_tree().create_timer(attack[1].get_length()*1.0/60).timeout	#later will be deleted possibly
+		
 		attack_in_progress = false
+		
 		if action_performed == -1:
 			print("FAIL")
 		
@@ -78,7 +81,7 @@ func _process(delta: float) -> void:
 		frame = 0
 		attack_just_started = false
 		
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and action_performed== -1:
+	if Input.is_action_pressed("dodge") and action_performed== -1:
 		print("You try to DODGE")
 		if attack_in_progress:
 			if current_attack.check_dodge(frame) == -1:
@@ -91,7 +94,7 @@ func _process(delta: float) -> void:
 				print("PERFECT DODGE")
 				action_performed = 2
 	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and action_performed== -1:
+	if Input.is_action_pressed("parry") and action_performed== -1:
 		print("You try to PARRY")
 		if attack_in_progress:
 			if current_attack.check_parry(frame) == -1:
