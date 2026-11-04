@@ -47,6 +47,7 @@ func attack_player():															#based on enemy stamina levels determines wh
 		
 		if action_performed == -1:
 			print("FAIL")
+			action_performed = -2
 		
 		previous_attacker = attacker
 		
