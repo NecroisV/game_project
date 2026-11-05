@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://d2im0v0piayct" path="res://game_master.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://g8w0vbhp8x4u" path="res://pierce.gd" id="3_epypp"]
 
 [node name="Node2D" type="Node2D" unique_id=227548316]
 
@@ -15,3 +16,8 @@ script = ExtResource("2_0e48y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1528986363]
 position = Vector2(75, 76)
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=321310502]
+position = Vector2(371, 69)
+texture = ExtResource("1_0e48y")
+script = ExtResource("3_epypp")

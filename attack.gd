@@ -1,18 +1,18 @@
 extends Object
 class_name Attack
 
-var attack_name: String			 	#name of an attack
+var attack_name: String			 	#name of an attack (possibly also of an animation)
 
-var damage							#damage of an attack
+var damage: int						#damage of an attack
 
 var base_cost: int  				#base cost of an attack
 var repeat_cost: int 	 			#additional cost when attacking after the same attack
 var from_different_cost: int 	 	#additional cost when attacking after a different attack
 
-var base_chance: int 	 			#chance for an enemy to use the attack this one is stays the same the whole time
-var chance: int = base_chance 		#chance for an enemy to use the attack this one is going to be modified
+var base_chance: float 	 			#chance for an enemy to use the attack this one is stays the same the whole time
+var chance: float = base_chance 	#chance for an enemy to use the attack this one is going to be modified
 
-var attack_gap_list: Array = [] 	#specified by the attacker
+var attack_gap_list: Array		 	#specified by the attacker
 
 var length_of_attack: int			#how many frames will the attack take
 var length_of_hitting: int			#in how many frames the attack will colide with the player character
